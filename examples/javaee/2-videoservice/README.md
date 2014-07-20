@@ -22,7 +22,9 @@ Either way the format for the POST request is the following:
 Using curl
 
 `curl -i -XPOST -H "Content-type: application/json" 
+
 -d "{\"duration\":1435,\"name\":\"CoolVideo\",\"url\":\"www.youtube.com\"}" 
+
 http://localhost:8080/2-videoservice/videos`
 
 And here an example of GET request, if you feel adventurous and for you the browser isn't enough:

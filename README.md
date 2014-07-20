@@ -3,6 +3,6 @@
 
 Examples for Coursera class "Programming Cloud Services for Android Handheld Systems"
 
-This repository contains examples made using plain Java EE.
+This repository contains examples made using plain Java EE 7.
 
 

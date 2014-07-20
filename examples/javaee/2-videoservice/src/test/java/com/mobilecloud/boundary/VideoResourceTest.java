@@ -33,26 +33,52 @@ public class VideoResourceTest {
         this.client = ClientBuilder.newClient();
         target = this.client.target(targetUrl);
     }
-
-    @After
-    public void tearDown(){
-        client.close();
-    }
     
      @Test
      public void uploadVideo() {
-         
-         //GET
-         Response response = target.request(MediaType.APPLICATION_JSON).get();
-         assertThat(response.getStatus(), is(Status.NO_CONTENT.getStatusCode()));
-                  
+     
          //POST
          Video video = new Video("Cool video", "www.youtube.com", 212);
-         response = target.request(MediaType.APPLICATION_JSON)
+         Response response = target.request(MediaType.APPLICATION_JSON)
                  .post(Entity.entity(video, MediaType.APPLICATION_JSON));
 
          assertThat(response.getStatus(), is(Status.CREATED.getStatusCode()));
 
+     }
+     
+      @Test
+     public void uploadBadUrlVideo() {
+         
+         //POST a video with a url size less than 10 characters
+         Video video = new Video("Cool video", "www.y.com", 212);
+         Response response = target.request(MediaType.APPLICATION_JSON)
+                 .post(Entity.entity(video, MediaType.APPLICATION_JSON));
+
+         assertThat(response.getStatus(), is(Status.BAD_REQUEST.getStatusCode()));
+
+     }
+     
+     @Test
+     public void uploadNoNameVideo() {
+         
+         //POST a video with a url size less than 10 characters
+         Video video = new Video("", "www.youtube.com", 212);
+         Response response = target.request(MediaType.APPLICATION_JSON)
+                 .post(Entity.entity(video, MediaType.APPLICATION_JSON));
+
+         assertThat(response.getStatus(), is(Status.BAD_REQUEST.getStatusCode()));
+
+     }
+     
+     @Test
+     public void uploadWrongDurationVideo() {
+         
+         //POST a video with a url size less than 10 characters
+         Video video = new Video("Cool video", "www.youtube.com", 0);
+         Response response = target.request(MediaType.APPLICATION_JSON)
+                 .post(Entity.entity(video, MediaType.APPLICATION_JSON));
+
+         assertThat(response.getStatus(), is(Status.BAD_REQUEST.getStatusCode()));
 
      }
 }

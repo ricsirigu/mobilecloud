@@ -25,7 +25,7 @@ import javax.ws.rs.core.UriInfo;
  * @author Riccardo Sirigu
  */
 @Singleton
-@Path("/video")
+@Path("/videos")
 public class VideoResource {
     
     private final Map<Integer, Video> videosDB = new ConcurrentHashMap<>();

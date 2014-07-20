@@ -2,7 +2,7 @@ package com.mobilecloud.echo;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
 /**
@@ -14,8 +14,7 @@ import javax.ws.rs.core.Response;
 public class EchoResource {
     
     @GET
-    @Path("{msg}")
-    public Response echo(@PathParam("msg") String msg){
+    public Response echo(@QueryParam("msg") String msg){
         return Response.ok(msg).build();
     }
     

@@ -9,7 +9,7 @@ Build with Netbeans or import the project in Eclipse
 
 After launching VideoService, you can interact with it by going to the following url
 
-`http://localhost:8080/2-videoservice/video`
+`http://localhost:8080/2-videoservice/videos`
 
 The service accepts GET and POST request.
 Accepts and returns videos in json format.
@@ -21,11 +21,13 @@ Either way the format for the POST request is the following:
 
 Using curl
 
-`curl -i -XPOST -H "Content-type: application/json" -d "{\"duration\":1435,\"name\":\"CoolVideo\",\"url\":\"www.youtube.com\"}" http://localhost:8080/2-videoservice/video`
+`curl -i -XPOST -H "Content-type: application/json" 
+-d "{\"duration\":1435,\"name\":\"CoolVideo\",\"url\":\"www.youtube.com\"}" 
+http://localhost:8080/2-videoservice/videos`
 
 And here an example of GET request, if you feel adventurous and for you the browser isn't enough:
 
 
-`curl -H "Accept: application/json" http://localhost:8080/2-videoservice/video`
+`curl -H "Accept: application/json" http://localhost:8080/2-videoservice/videos`
 
 

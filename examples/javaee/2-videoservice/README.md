@@ -9,7 +9,7 @@ Build with Netbeans or import the project in Eclipse
 
 After launching VideoService, you can interact with it by going to the following url
 
-http://localhost:8080/2-videoservice/video
+`http://localhost:8080/2-videoservice/video`
 
 The service accepts GET and POST request.
 Accepts and returns videos in json format.

@@ -1,5 +1,5 @@
 ## Programming Cloud Services for Android Handheld Systems
-===========
+
 
 Examples for Coursera class "Programming Cloud Services for Android Handheld Systems"
 
